@@ -18,12 +18,12 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('country');
-            $table->string('state');
-            $table->string('city');
+            $table->mediumInteger('country');
+            $table->mediumInteger('state');
+            $table->mediumInteger('city');
             $table->string('phone')->unique();
-            $table->integer('trade_min_experience');
-            $table->integer('trade_max_experience');
+            $table->integer('trade_min_experience')->nullable();
+            $table->integer('trade_max_experience')->nullable();
             $table->string('source_of_fund');
             $table->string('gender');
             $table->string('dob');

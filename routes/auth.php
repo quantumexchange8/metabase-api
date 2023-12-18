@@ -8,6 +8,14 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
 
+Route::get('getRegisterInputs', [RegisteredUserController::class, 'getRegisterInputs'])->middleware('guest')->name('getRegisterInputs');
+Route::get('getStates', [RegisteredUserController::class, 'getStates'])->middleware('guest')->name('getStates');
+Route::get('getCities', [RegisteredUserController::class, 'getCities'])->middleware('guest')->name('getCities');
+
+Route::post('/validateRegister', [RegisteredUserController::class, 'validateRegister'])
+                ->middleware('guest')
+                ->name('validateRegister');
+
 Route::post('/register', [RegisteredUserController::class, 'store'])
                 ->middleware('guest')
                 ->name('register');
